@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Herd Milk: identity board (direction D) (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--cob:#1F45E0;--ink:#0B1A44;--sky:#EEF2FF;--pink:#FF5C8A;--milk:#FEFEFC;--mute:#4A5577}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--milk);color:var(--ink);font:400 1.0625rem/1.55 "Bricolage Grotesque",system-ui,sans-serif}
+svg{display:block;max-width:100%}
+.wrap{max-width:1220px;margin:0 auto}
+.wrap.wrap{padding-left:24px;padding-right:24px}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.98;margin:0}
+section{padding:64px 0;border-top:2px solid var(--sky)}
+section>.wrap>h2{font-size:clamp(2rem,4vw,3rem);color:var(--cob);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 30px;max-width:62ch}
+.top{padding:40px 0 30px}
+.top h1{font-size:clamp(2.6rem,6vw,4.6rem);color:var(--cob)}
+.top p{max-width:72ch;color:var(--mute);margin:14px 0 0}
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo-mark{width:46px;height:46px;flex:none}
+.word{font-weight:800;font-size:1.65rem;letter-spacing:-.045em;color:var(--cob);line-height:1;white-space:nowrap}
+.word .i{position:relative;display:inline-block}
+.word .i svg{position:absolute;left:50%;top:-.12em;width:.42em;height:.58em;transform:translateX(-50%)}
+.locks{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+.lock{border-radius:28px;display:grid;place-items:center;padding:40px 24px;min-height:300px}
+.lock.main{background:var(--sky);position:relative}
+.stack{position:relative;width:min(100%,380px);aspect-ratio:1}
+.stack svg{position:absolute;inset:0;width:100%;height:100%}
+.stack .txt{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:#fff;font-weight:800;letter-spacing:-.05em;line-height:.82;font-size:clamp(3.4rem,9vw,5.6rem);padding-bottom:6%}
+.stack .txt .i{position:relative;display:inline-block}
+.stack .txt .i svg{position:absolute;left:50%;top:-.1em;width:.4em;height:.55em;transform:translateX(-50%);right:auto;bottom:auto}
+.sidelocks{display:grid;gap:20px}
+.lock.h .word{font-size:clamp(2.2rem,4vw,3rem)}
+.lock.h .logo-mark{width:72px;height:72px}
+.lock.on-blue{background:var(--cob)}.lock.on-blue .word{color:#fff}
+.lock.on-pink{background:var(--pink)}.lock.on-pink .word{color:var(--ink)}.lock.on-pink .i path{fill:var(--milk)}
+.lock{min-height:140px}
+.sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.sw div{border-radius:20px;padding:96px 16px 16px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(11,26,68,.1)}
+.sw small{display:block;font-weight:500;opacity:.8}
+.fl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.fl span{border-radius:999px;padding:8px 16px;font-weight:700;font-size:.95rem}
+.type{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:end}
+.type .big{font-size:clamp(3.6rem,9vw,7.5rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--cob)}
+.type p{margin:0 0 10px}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.tile{background:var(--sky);border-radius:24px;padding:20px;grid-column:span 2}
+.tile:nth-child(4),.tile:nth-child(5){grid-column:span 3}
+.tile svg{height:150px;width:100%;margin-bottom:14px}
+.tile h3{font-size:1.4rem;margin-bottom:4px}
+.tile p{margin:0;color:var(--mute);font-size:.98rem}
+.apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.app{border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.app svg{width:100%;max-height:300px;overflow:visible}
+.app h3{font-size:1.25rem}
+.app p{margin:4px 0 0;font-size:.95rem;opacity:.85}
+.app.b{background:var(--cob);color:#fff}.app.s{background:var(--sky)}.app.p{background:#FFE3EC}.app.y{background:#FFE58A}
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.name{border-radius:22px;padding:22px 24px;background:var(--sky)}
+.name.work{background:var(--cob);color:#fff}
+.name h3{font-size:1.9rem;margin-bottom:6px}
+.name p{margin:0}
+.name .k{display:inline-block;font-weight:700;font-size:.85rem;background:var(--pink);color:var(--ink);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+footer{padding:30px 0 48px;color:var(--mute);font-size:.92rem;border-top:2px solid var(--sky)}
+footer p{max-width:80ch;margin:0}
+@media (max-width:900px){
+  .locks,.type,.names{grid-template-columns:minmax(0,1fr)}
+  .sw{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sw div{padding-top:64px}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .tile,.tile:nth-child(4),.tile:nth-child(5){grid-column:auto}
+  .apps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section{padding:44px 0}
+}
+@media (max-width:520px){.apps{grid-template-columns:minmax(0,1fr)}.app svg{max-height:260px}}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Antrobus Herd website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<div class="wrap top">
+  <h1>Herd Milk: identity board</h1>
+  <p>Direction D, round two. A bright, fresh drink brand for milk and milkshakes from a self-serve vending hut, made from milk splashes, drips, pours and crowns. It is based on the idea that the Antrobus Herd might sell its own milk; we do not know yet that it does. Herd Milk is a working name. Prepared 23 November 2026. <a href="d-herd-milk.html">See it on a homepage</a>.</p>
+</div>
+
+<section><div class="wrap">
+  <h2>The logo</h2>
+  <p class="sub">A cobalt milk splat with drips, and a heavy, friendly wordmark whose i is dotted with a pink drop. Stacked inside the splat for bottles and signs; side by side for the website and the hut.</p>
+  <div class="locks">
+    <div class="lock main"><div class="stack"><svg viewBox="0 0 400 400" aria-hidden="true"><g fill="#1F45E0"><path d="M339.7,190 C334.8,209.2 330.4,224.3 324.3,241.5 C318.2,258.7 315.2,280.8 303.2,293.2 C291.2,305.6 269.5,311.2 252.3,316.2 C235.1,321.1 218,321.6 200,323.1 C182,324.6 163.7,327.6 144.1,325 C124.5,322.5 98,319.8 82.4,307.6 C66.8,295.4 57.7,271.5 50.6,251.9 C43.5,232.3 36.2,209.2 39.7,190 C43.1,170.8 62.6,154.6 71.4,136.7 C80.3,118.9 80.5,95.8 92.9,82.9 C105.3,70 128.1,64.5 145.9,59.5 C163.8,54.4 182.4,51.7 200,52.8 C217.6,53.8 235.2,59.1 251.5,65.6 C267.9,72.1 281.1,81.7 298.2,91.8 C315.3,101.9 347.1,109.9 354,126.2 C360.9,142.6 344.7,170.8 339.7,190Z"/><path d="M179.5,312.5 L179.5,395 A9.8,9.8 0 0 0 199,395 L199,312.5 Z"/><circle cx="189.3" cy="424.3" r="8.2"/><path d="M138.3,301.5 L138.3,436.5 A9.8,9.8 0 0 0 157.8,436.5 L157.8,301.5 Z"/><circle cx="148" cy="465.7" r="8.2"/><path d="M232.3,305.6 L232.3,358.1 A9.8,9.8 0 0 0 251.8,358.1 L251.8,305.6 Z"/><circle cx="242.1" cy="387.3" r="8.2"/><circle cx="23.4" cy="244.5" r="10"/><circle cx="21" cy="229.2" r="8"/><circle cx="273.2" cy="358.1" r="8.3"/><circle cx="245.6" cy="25.4" r="6.3"/><circle cx="361.9" cy="293.7" r="8.7"/></g></svg><div class="txt"><span>Herd</span><span>M<span class="i">ı<svg viewBox="-8 -12 16 22" aria-hidden="true"><path d="M0,-10 C3,-5 6,-1 6,3 A6,6 0 1 1 -6,3 C-6,-1 -3,-5 0,-10Z" fill="#FF5C8A"/></svg></span>lk</span></div></div></div>
+    <div class="sidelocks">
+      <div class="lock h"><span class="logo "><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="#1F45E0"><path d="M99.6,56 C100,60.8 98.1,66.5 95.8,70.8 C93.5,75.1 89,77.6 85.8,81.8 C82.6,86.1 81,94.6 76.7,96.2 C72.3,97.8 65.3,91.8 60,91.3 C54.7,90.7 49.8,93.7 44.7,93 C39.5,92.3 32,90.9 29,87 C26,83.1 28.4,74.9 26.8,69.8 C25.2,64.6 20.3,60.9 19.5,56 C18.7,51.1 19.5,44.5 22,40.3 C24.6,36.1 31,34.2 34.8,30.8 C38.7,27.5 40.9,22.9 45.1,20.1 C49.3,17.3 55,14.2 60,14 C65,13.9 70.2,17.4 75.1,19.5 C80.1,21.5 86.7,22.4 89.8,26.2 C92.9,29.9 92.3,37 93.9,42 C95.6,46.9 99.3,51.2 99.6,56Z"/><path d="M51.7,88.3 L51.7,108.3 A2.6,2.6 0 0 0 56.9,108.3 L56.9,88.3 Z"/><circle cx="54.3" cy="116.1" r="2.2"/><path d="M65.9,87.7 L65.9,99.7 A2.6,2.6 0 0 0 71.1,99.7 L71.1,87.7 Z"/><circle cx="68.5" cy="107.5" r="2.2"/><circle cx="28.6" cy="93.2" r="1.9"/><circle cx="14.6" cy="71.8" r="2.3"/><circle cx="57.2" cy="105.8" r="1.2"/><circle cx="44.7" cy="101" r="1.4"/><circle cx="58" cy="8.8" r="2.5"/></g></svg><span class="word">Herd M<span class="i">ı<svg viewBox="-8 -12 16 22" aria-hidden="true"><path d="M0,-10 C3,-5 6,-1 6,3 A6,6 0 1 1 -6,3 C-6,-1 -3,-5 0,-10Z" fill="#FF5C8A"/></svg></span>lk</span></span></div>
+      <div class="lock h on-blue"><span class="logo "><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="#FEFEFC"><path d="M99.6,56 C100,60.8 98.1,66.5 95.8,70.8 C93.5,75.1 89,77.6 85.8,81.8 C82.6,86.1 81,94.6 76.7,96.2 C72.3,97.8 65.3,91.8 60,91.3 C54.7,90.7 49.8,93.7 44.7,93 C39.5,92.3 32,90.9 29,87 C26,83.1 28.4,74.9 26.8,69.8 C25.2,64.6 20.3,60.9 19.5,56 C18.7,51.1 19.5,44.5 22,40.3 C24.6,36.1 31,34.2 34.8,30.8 C38.7,27.5 40.9,22.9 45.1,20.1 C49.3,17.3 55,14.2 60,14 C65,13.9 70.2,17.4 75.1,19.5 C80.1,21.5 86.7,22.4 89.8,26.2 C92.9,29.9 92.3,37 93.9,42 C95.6,46.9 99.3,51.2 99.6,56Z"/><path d="M51.7,88.3 L51.7,108.3 A2.6,2.6 0 0 0 56.9,108.3 L56.9,88.3 Z"/><circle cx="54.3" cy="116.1" r="2.2"/><path d="M65.9,87.7 L65.9,99.7 A2.6,2.6 0 0 0 71.1,99.7 L71.1,87.7 Z"/><circle cx="68.5" cy="107.5" r="2.2"/><circle cx="28.6" cy="93.2" r="1.9"/><circle cx="14.6" cy="71.8" r="2.3"/><circle cx="57.2" cy="105.8" r="1.2"/><circle cx="44.7" cy="101" r="1.4"/><circle cx="58" cy="8.8" r="2.5"/></g></svg><span class="word">Herd M<span class="i">ı<svg viewBox="-8 -12 16 22" aria-hidden="true"><path d="M0,-10 C3,-5 6,-1 6,3 A6,6 0 1 1 -6,3 C-6,-1 -3,-5 0,-10Z" fill="#FF5C8A"/></svg></span>lk</span></span></div>
+      <div class="lock h on-pink"><span class="logo "><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="#0B1A44"><path d="M99.6,56 C100,60.8 98.1,66.5 95.8,70.8 C93.5,75.1 89,77.6 85.8,81.8 C82.6,86.1 81,94.6 76.7,96.2 C72.3,97.8 65.3,91.8 60,91.3 C54.7,90.7 49.8,93.7 44.7,93 C39.5,92.3 32,90.9 29,87 C26,83.1 28.4,74.9 26.8,69.8 C25.2,64.6 20.3,60.9 19.5,56 C18.7,51.1 19.5,44.5 22,40.3 C24.6,36.1 31,34.2 34.8,30.8 C38.7,27.5 40.9,22.9 45.1,20.1 C49.3,17.3 55,14.2 60,14 C65,13.9 70.2,17.4 75.1,19.5 C80.1,21.5 86.7,22.4 89.8,26.2 C92.9,29.9 92.3,37 93.9,42 C95.6,46.9 99.3,51.2 99.6,56Z"/><path d="M51.7,88.3 L51.7,108.3 A2.6,2.6 0 0 0 56.9,108.3 L56.9,88.3 Z"/><circle cx="54.3" cy="116.1" r="2.2"/><path d="M65.9,87.7 L65.9,99.7 A2.6,2.6 0 0 0 71.1,99.7 L71.1,87.7 Z"/><circle cx="68.5" cy="107.5" r="2.2"/><circle cx="28.6" cy="93.2" r="1.9"/><circle cx="14.6" cy="71.8" r="2.3"/><circle cx="57.2" cy="105.8" r="1.2"/><circle cx="44.7" cy="101" r="1.4"/><circle cx="58" cy="8.8" r="2.5"/></g></svg><span class="word">Herd M<span class="i">ı<svg viewBox="-8 -12 16 22" aria-hidden="true"><path d="M0,-10 C3,-5 6,-1 6,3 A6,6 0 1 1 -6,3 C-6,-1 -3,-5 0,-10Z" fill="#FF5C8A"/></svg></span>lk</span></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Colours</h2>
+  <p class="sub">Mostly milk white, with one bold cobalt, the blue of an old milk bottle top, and strawberry pink for shakes and small moments. Flavour colours only ever appear on shakes.</p>
+  <div class="sw">
+    <div style="background:#FEFEFC">Milk<small>#FEFEFC</small></div>
+    <div style="background:#1F45E0;color:#fff">Cobalt<small>#1F45E0</small></div>
+    <div style="background:#FF5C8A">Strawberry<small>#FF5C8A</small></div>
+    <div style="background:#0B1A44;color:#fff">Ink<small>#0B1A44</small></div>
+    <div style="background:#EEF2FF">Sky<small>#EEF2FF</small></div>
+  </div>
+  <div class="fl"><span style="background:#FF5C8A;color:#0B1A44">Strawberry</span><span style="background:#6B3A2E;color:#FEFEFC">Chocolate</span><span style="background:#FFD23F;color:#0B1A44">Banana</span><span style="background:#E0913F;color:#0B1A44">Salted caramel</span><span style="background:#FFF1C9;color:#0B1A44">Vanilla</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Lettering</h2>
+  <div class="type">
+    <div class="big">Fill. Pay. Go.</div>
+    <div><p><b>Bricolage Grotesque</b>, a free typeface with chunky, slightly quirky letters at large sizes that stay clear and calm when small. Extra bold for the wordmark and headlines, semi bold for labels, regular for reading.</p><p style="color:var(--mute)">Headlines are short and said out loud: "Fresh from the herd. Fill your own."</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>The splash system</h2>
+  <p class="sub">Five shapes, all cut from the same milk. They move: the crown rises when the page loads, drips stretch as you reach them, the bottle fills. They hold still for anyone who has asked their device for less motion.</p>
+  <div class="tiles"><div class="tile"><svg viewBox="0 0 300 190" aria-hidden="true"><path d="M258,155.5 C243.8,159.2 180.6,161 150,161 C119.4,161 56.2,159.2 42,155.5 C27.8,151.8 47.9,137.3 50,134.6 C52.1,131.9 56.3,138 57.1,136.3 C58,134.6 56.8,129.1 55.9,122.5 C54.9,115.8 50.1,89.5 50.6,89.5 C51,89.5 56,115.8 59,122.5 C62,129.1 67.6,135.1 71.4,136.6 C75.2,138 83.5,137.7 85.7,132.7 C87.9,127.8 87,110.9 86.7,101.9 C86.4,92.9 83.3,68.9 83.7,68.9 C84.2,68.9 87.6,92.6 89.9,101.9 C92.2,111.3 96.5,130.5 100,134.9 C103.5,139.4 111.8,140.1 114.3,133.2 C116.8,126.3 117.2,97.5 117.6,86.1 C117.9,74.8 116.4,53.1 116.9,53.1 C117.3,53.1 119.1,74.6 120.7,86.1 C122.4,97.7 125.4,128.4 128.6,134.9 C131.7,141.5 140,140.7 142.9,132.7 C145.7,124.6 147.4,90.7 148.4,78.3 C149.4,65.9 149.6,45.3 150,45.3 C150.4,45.3 150.6,65.8 151.6,78.3 C152.6,90.8 154.3,125.9 157.1,133.7 C160,141.5 168.3,139.7 171.4,133.4 C174.6,127.1 177.6,100 179.3,89.1 C180.9,78.1 182.7,56.1 183.1,56.1 C183.6,56.1 182.1,77.7 182.4,89.1 C182.8,100.5 183.2,130.4 185.7,136.6 C188.2,142.8 196.5,135.5 200,132.6 C203.5,129.7 207.8,123.3 210.1,116.3 C212.4,109.3 215.8,83.3 216.3,83.3 C216.7,83.3 213.6,108.7 213.3,116.3 C213,123.9 212.1,134 214.3,137 C216.5,139.9 224.8,139.8 228.6,137 C232.4,134.2 238,124.7 241,117.3 C244,109.8 249,84.3 249.4,84.3 C249.9,84.3 245.1,110.2 244.1,117.3 C243.2,124.3 242,131.6 242.9,134 C243.7,136.5 247.9,131.6 250,134.6 C252.1,137.6 272.2,151.8 258,155.5Z" fill="#1F45E0"/><path d="M43.7,57.1 C47,62.6 50.3,67 50.3,71.4 A6.6,6.6 0 1 1 37.1,71.4 C37.1,67 40.4,62.6 43.7,57.1Z" fill="#1F45E0"/><path d="M79.1,36.9 C82.3,42.2 85.5,46.5 85.5,50.7 A6.4,6.4 0 1 1 72.8,50.7 C72.8,46.5 76,42.2 79.1,36.9Z" fill="#1F45E0"/><path d="M114.6,29.3 C117.6,34.3 120.7,38.4 120.7,42.5 A6.1,6.1 0 1 1 108.5,42.5 C108.5,38.4 111.5,34.3 114.6,29.3Z" fill="#1F45E0"/><path d="M150,19.5 C153.5,25.3 157.1,30 157.1,34.7 A7.1,7.1 0 1 1 142.9,34.7 C142.9,30 146.5,25.3 150,19.5Z" fill="#1F45E0"/><path d="M185.4,33.1 C188.6,38.3 191.7,42.5 191.7,46.7 A6.3,6.3 0 1 1 179.1,46.7 C179.1,42.5 182.3,38.3 185.4,33.1Z" fill="#1F45E0"/><path d="M220.9,61.2 C223.5,65.6 226.1,69.1 226.1,72.6 A5.3,5.3 0 1 1 215.6,72.6 C215.6,69.1 218.2,65.6 220.9,61.2Z" fill="#1F45E0"/><path d="M256.3,52.5 C259.3,57.6 262.4,61.7 262.4,65.7 A6.1,6.1 0 1 1 250.2,65.7 C250.2,61.7 253.2,57.6 256.3,52.5Z" fill="#1F45E0"/></svg><h3>The crown</h3><p>A splash rising as a bottle lands. Used once, big, per page or pack.</p></div><div class="tile"><svg viewBox="0 0 300 230" aria-hidden="true"><g fill="#1F45E0"><path d="M222.6,100 C220.1,110 217.8,117.8 214.6,126.8 C211.5,135.7 209.9,147.2 203.7,153.7 C197.4,160.1 186.1,163 177.2,165.6 C168.2,168.2 159.4,168.4 150,169.2 C140.6,170 131.1,171.6 120.9,170.2 C110.7,168.9 97,167.5 88.9,161.1 C80.8,154.8 76,142.4 72.3,132.2 C68.6,122 64.8,110 66.6,100 C68.4,90 78.5,81.6 83.1,72.3 C87.8,63 87.9,51 94.3,44.3 C100.8,37.6 112.6,34.7 121.9,32.1 C131.2,29.5 140.8,28.1 150,28.6 C159.2,29.2 168.3,31.9 176.8,35.3 C185.3,38.7 192.2,43.7 201.1,48.9 C209.9,54.2 226.5,58.3 230.1,66.8 C233.7,75.3 225.2,90 222.6,100Z"/><path d="M139.4,163.7 L139.4,206.6 A5.1,5.1 0 0 0 149.5,206.6 L149.5,163.7 Z"/><circle cx="144.4" cy="221.8" r="4.3"/><path d="M117.9,158 L117.9,228.2 A5.1,5.1 0 0 0 128,228.2 L128,158 Z"/><circle cx="123" cy="243.4" r="4.3"/><path d="M166.8,160.1 L166.8,187.4 A5.1,5.1 0 0 0 176.9,187.4 L176.9,160.1 Z"/><circle cx="171.9" cy="202.6" r="4.3"/><circle cx="58.2" cy="128.3" r="5.2"/><circle cx="56.9" cy="120.4" r="4.2"/><circle cx="188.1" cy="187.4" r="4.3"/><circle cx="173.7" cy="14.4" r="3.3"/><circle cx="234.2" cy="153.9" r="4.5"/></g></svg><h3>The splat</h3><p>The logo's ground, and a frame for photos of the herd.</p></div><div class="tile"><svg viewBox="0 0 300 140" aria-hidden="true"><g fill="#1F45E0"><path d="M0,0 L300,0 L300,20 L314.2,20 Q300.6,20 300.6,32.2 L300.6,80.6 A13.5,13.5 0 0 1 273.6,80.6 L273.6,32.2 Q273.6,20 260.1,20 L265.3,20 Q248.3,20 248.3,35.2 L248.3,43.8 A16.9,16.9 0 0 1 214.4,43.8 L214.4,35.2 Q214.4,20 197.5,20 L208.2,20 Q197,20 197,30.1 L197,49.9 A11.2,11.2 0 0 1 174.5,49.9 L174.5,30.1 Q174.5,20 163.3,20 L184.6,20 Q169.1,20 169.1,34 L169.1,37.3 A15.5,15.5 0 0 1 138,37.3 L138,34 Q138,20 122.4,20 L124.3,20 Q112.5,20 112.5,30.6 L112.5,78.9 A11.8,11.8 0 0 1 89,78.9 L89,30.6 Q89,20 77.2,20 L102.3,20 Q87.3,20 87.3,33.6 L87.3,84.7 A15.1,15.1 0 0 1 57.1,84.7 L57.1,33.6 Q57.1,20 42.1,20 L60.4,20 Q38.6,20 38.6,39.6 L38.6,109.1 A21.8,21.8 0 0 1 -5.1,109.1 L-5.1,39.6 Q-5.1,20 -26.9,20 L0,20Z"/><circle cx="231.4" cy="80.6" r="10.2"/><circle cx="16.7" cy="161.8" r="13.1"/></g></svg><h3>The drip edge</h3><p>Where one colour meets another, milk drips over the join.</p></div><div class="tile"><svg viewBox="0 0 300 160" aria-hidden="true"><path d="M70,50 C82,70 94,86 94,102 A24,24 0 1 1 46,102 C46,86 58,70 70,50Z" fill="#1F45E0"/><path d="M150,36 C166.2,63 182.4,84.6 182.4,106.2 A32.4,32.4 0 1 1 117.6,106.2 C117.6,84.6 133.8,63 150,36Z" fill="#FF5C8A"/><path d="M225,58 C234.6,74 244.2,86.8 244.2,99.6 A19.2,19.2 0 1 1 205.8,99.6 C205.8,86.8 215.4,74 225,58Z" fill="#1F45E0"/></svg><h3>The drop</h3><p>Dots the i in Milk. Bullets, map pins and small marks.</p></div><div class="tile"><svg viewBox="0 0 300 200" aria-hidden="true"><path d="M150,0 L150,120" stroke="#1F45E0" stroke-width="18" stroke-linecap="round"/><g transform="translate(110,95) scale(.42)"><path d="M74,34 L74,80 C74,110 40,115 40,150 L40,300 Q40,320 60,320 L140,320 Q160,320 160,300 L160,150 C160,115 126,110 126,80 L126,34 Z" fill="#FF5C8A"/></g><path d="M150,0 L150,120" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".5"/></svg><h3>The pour</h3><p>A single clean stream: shows filling, and leads the eye down the page.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>In use</h2>
+  <p class="sub">Example applications. Prices, flavours and wording are examples.</p>
+  <div class="apps">
+    <div class="app s"><svg class="bottle" viewBox="0 0 200 340" width="200" height="340" aria-hidden="true">
+  <defs><clipPath id="bc-bb1"><path d="M74,34 L74,80 C74,110 40,115 40,150 L40,300 Q40,320 60,320 L140,320 Q160,320 160,300 L160,150 C160,115 126,110 126,80 L126,34 Z"/></clipPath></defs>
+  
+  <path d="M74,34 L74,80 C74,110 40,115 40,150 L40,300 Q40,320 60,320 L140,320 Q160,320 160,300 L160,150 C160,115 126,110 126,80 L126,34 Z" fill="rgba(255,255,255,.22)"/>
+  <g clip-path="url(#bc-bb1)"><rect class="" x="30" y="96" width="140" height="240" fill="#FEFEFC"/></g>
+  <path d="M74,34 L74,80 C74,110 40,115 40,150 L40,300 Q40,320 60,320 L140,320 Q160,320 160,300 L160,150 C160,115 126,110 126,80 L126,34 Z" fill="none" stroke="#0B1A44" stroke-opacity=".55" stroke-width="5"/>
+  <path d="M52,170 C52,150 60,140 70,132" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <rect x="66" y="10" width="68" height="30" rx="9" fill="#FF5C8A"/>
+  <rect x="40" y="196" width="120" height="78" fill="#1F45E0"/>
+  <text x="100" y="231" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="25" fill="#fff" letter-spacing="-.5">Herd Milk</text>
+  <text x="100" y="257" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="600" font-size="12" fill="#fff" letter-spacing="1.5">WHOLE MILK</text>
+</svg><div><h3>Glass bottle</h3><p>Foil cap colour by type: pink, cobalt, yellow.</p></div></div>
+    <div class="app p"><svg viewBox="0 -20 200 340" aria-hidden="true">
+  <rect x="112" y="-4" width="12" height="110" rx="6" transform="rotate(14 118 50)" fill="#0B1A44"/>
+  <g class="cup-crown"><path d="M181,95.5 C170.4,97.9 123,99 100,99 C77,99 29.6,97.9 19,95.5 C8.4,93.1 23.3,83.9 25,82.2 C26.7,80.5 30.4,85.2 31.2,83.6 C32.1,82 31.7,75.8 31.1,71 C30.6,66.2 27.1,50 27.5,50 C27.9,50 31.6,66.2 33.9,71 C36.2,75.8 40.6,82.1 43.8,84 C46.9,86 54.2,87.8 56.2,84.7 C58.3,81.6 58.1,68.4 58.1,62.3 C58.2,56.1 56.1,41.3 56.5,41.3 C56.9,41.3 59.1,56.1 60.9,62.3 C62.6,68.4 65.9,81.3 68.8,84.6 C71.6,87.8 78.9,89.5 81.2,85.2 C83.6,80.9 84.5,61.7 85.1,54.3 C85.7,47 85.1,33.3 85.5,33.3 C85.9,33.3 86.7,47.6 87.9,54.3 C89,61 91.1,76.9 93.8,80.7 C96.4,84.5 103.6,85.1 106.2,81.2 C108.9,77.4 111,60.6 112.1,53.8 C113.3,46.9 114.1,32.8 114.5,32.8 C114.9,32.8 114.3,46.8 114.9,53.8 C115.5,60.7 116.4,77.6 118.8,81.8 C121.1,86 128.4,85.7 131.2,83.3 C134.1,80.9 137.4,70.4 139.1,64.8 C140.9,59.2 143.1,43.8 143.5,43.8 C143.9,43.8 141.8,59.1 141.9,64.8 C141.9,70.5 141.7,82 143.8,84.2 C145.8,86.4 153.1,81.8 156.2,80.4 C159.4,78.9 163.8,78 166.1,74.1 C168.4,70.3 172.1,53.1 172.5,53.1 C172.9,53.1 169.4,70.2 168.9,74.1 C168.3,78 167.9,79.5 168.8,80.7 C169.6,81.8 173.3,80.1 175,82.2 C176.7,84.3 191.6,93.1 181,95.5Z" fill="#FF5C8A"/><path d="M22.5,29.9 C24.5,33.3 26.5,36 26.5,38.7 A4,4 0 1 1 18.5,38.7 C18.5,36 20.5,33.3 22.5,29.9Z" fill="#FF5C8A"/><path d="M53.5,23.8 C55.4,27 57.4,29.6 57.4,32.2 A3.9,3.9 0 1 1 49.6,32.2 C49.6,29.6 51.6,27 53.5,23.8Z" fill="#FF5C8A"/><path d="M84.5,15.2 C87.2,19.6 89.9,23.2 89.9,26.8 A5.4,5.4 0 1 1 79.1,26.8 C79.1,23.2 81.8,19.6 84.5,15.2Z" fill="#FF5C8A"/><path d="M115.5,12.4 C117.6,15.9 119.7,18.7 119.7,21.5 A4.2,4.2 0 1 1 111.3,21.5 C111.3,18.7 113.4,15.9 115.5,12.4Z" fill="#FF5C8A"/><path d="M146.5,27.2 C148.4,30.3 150.2,32.7 150.2,35.2 A3.7,3.7 0 1 1 142.8,35.2 C142.8,32.7 144.6,30.3 146.5,27.2Z" fill="#FF5C8A"/><path d="M177.5,36.7 C179.9,40.7 182.4,44 182.4,47.2 A4.9,4.9 0 1 1 172.6,47.2 C172.6,44 175.1,40.7 177.5,36.7Z" fill="#FF5C8A"/></g>
+  <path d="M28,92 L172,92 L156,300 Q154,316 138,316 L62,316 Q46,316 44,300 Z" fill="#FF5C8A"/>
+  <path d="M28,92 L172,92 L156,300 Q154,316 138,316 L62,316 Q46,316 44,300 Z" fill="none" stroke="#0B1A44" stroke-opacity=".12" stroke-width="3"/>
+  <rect x="44" y="170" width="112" height="64" rx="4" fill="#FEFEFC"/>
+  <text x="100" y="200" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="18" fill="#1F45E0">Herd Milk</text>
+  <text x="100" y="220" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="600" font-size="10" fill="#0B1A44" letter-spacing="1.4">SHAKE</text>
+  <path d="M60,120 L56,170" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+</svg><div><h3>Milkshake bottle</h3><p>The whole bottle takes the flavour colour.</p></div></div>
+    <div class="app b"><svg class="hut" viewBox="0 0 400 380" role="img" aria-label="Drawing of a Herd Milk vending hut">
+  <path d="M40,130 L200,40 L360,130 Z" fill="#0B1A44"/>
+  <rect x="64" y="128" width="272" height="226" rx="10" fill="#FEFEFC"/>
+  <g transform="translate(50,128) scale(1,.45)" fill="#FF5C8A"><path d="M0,0 L300,0 L300,8 L317.1,8 Q295,8 295,27.8 L295,22.4 A22,22 0 0 1 251,22.4 L251,27.8 Q251,8 229,8 L251.2,8 Q233.8,8 233.8,23.7 L233.8,24.3 A17.4,17.4 0 0 1 198.9,24.3 L198.9,23.7 Q198.9,8 181.4,8 L195.2,8 Q181.7,8 181.7,20.2 L181.7,23.4 A13.6,13.6 0 0 1 154.5,23.4 L154.5,20.2 Q154.5,8 141,8 L164.1,8 Q143.5,8 143.5,26.5 L143.5,17.5 A20.6,20.6 0 0 1 102.3,17.5 L102.3,26.5 Q102.3,8 81.7,8 L106.6,8 Q86.8,8 86.8,25.8 L86.8,22.8 A19.8,19.8 0 0 1 47.3,22.8 L47.3,25.8 Q47.3,8 27.5,8 L56.3,8 Q38,8 38,24.4 L38,21.4 A18.3,18.3 0 0 1 1.5,21.4 L1.5,24.4 Q1.5,8 -16.8,8 L0,8Z"/></g>
+  <text x="200" y="186" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="32" fill="#1F45E0" letter-spacing="-1">Herd Milk</text>
+  <rect x="104" y="196" width="112" height="140" rx="12" fill="#EEF2FF"/>
+  <rect x="146" y="210" width="28" height="22" rx="5" fill="#0B1A44"/>
+  <rect x="155" y="232" width="10" height="16" fill="#0B1A44"/>
+  <rect x="157" y="250" width="6" height="34" rx="3" fill="#1F45E0" opacity=".6"/>
+  <g transform="translate(140,262) scale(.2)"><path d="M74,34 L74,80 C74,110 40,115 40,150 L40,300 Q40,320 60,320 L140,320 Q160,320 160,300 L160,150 C160,115 126,110 126,80 L126,34 Z" fill="#1F45E0" opacity=".25"/></g>
+  <rect x="232" y="196" width="80" height="62" rx="10" fill="#1F45E0"/>
+  <text x="272" y="222" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="13" fill="#fff">FILL</text>
+  <text x="272" y="238" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="13" fill="#fff">PAY</text>
+  <text x="272" y="254" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="13" fill="#fff">GO</text>
+  <rect x="232" y="272" width="80" height="64" rx="10" fill="#FF5C8A"/>
+  <text x="272" y="300" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="13" fill="#0B1A44">SHAKES</text>
+  <text x="272" y="318" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="600" font-size="11" fill="#0B1A44">inside</text>
+  <rect x="20" y="352" width="360" height="10" rx="5" fill="#0B1A44" opacity=".25"/>
+</svg><div><h3>Vending hut</h3><p>A pink drip edge over the door, Fill. Pay. Go. on the machine.</p></div></div>
+    <div class="app y"><svg viewBox="0 0 320 380" role="img" aria-label="Roadside A-board sign for Herd Milk">
+  <path d="M60,370 L120,20 L200,20 L260,370" fill="none" stroke="#0B1A44" stroke-width="10" stroke-linejoin="round"/>
+  <rect x="70" y="40" width="180" height="250" rx="18" fill="#1F45E0"/>
+  <g transform="translate(70,40) scale(1,.6)" fill="#FEFEFC"><path d="M0,0 L180,0 L180,8 L209.9,8 Q189.2,8 189.2,26.6 L189.2,20.1 A20.7,20.7 0 0 1 147.8,20.1 L147.8,26.6 Q147.8,8 127.1,8 L153.7,8 Q142.6,8 142.6,17.9 L142.6,19 A11,11 0 0 1 120.6,19 L120.6,17.9 Q120.6,8 109.5,8 L145.8,8 Q125.3,8 125.3,26.5 L125.3,23.8 A20.5,20.5 0 0 1 84.2,23.8 L84.2,26.5 Q84.2,8 63.7,8 L122.6,8 Q99.6,8 99.6,28.7 L99.6,21.9 A23,23 0 0 1 53.6,21.9 L53.6,28.7 Q53.6,8 30.7,8 L70.1,8 Q58.7,8 58.7,18.3 L58.7,18.6 A11.4,11.4 0 0 1 35.9,18.6 L35.9,18.3 Q35.9,8 24.5,8 L55.8,8 Q33.4,8 33.4,28.2 L33.4,25.5 A22.4,22.4 0 0 1 -11.4,25.5 L-11.4,28.2 Q-11.4,8 -33.9,8 L0,8Z"/></g>
+  <text x="160" y="150" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-1">Fresh</text>
+  <text x="160" y="182" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="30" fill="#fff" letter-spacing="-1">milk here</text>
+  <text x="160" y="222" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="16" fill="#FF5C8A" letter-spacing="1">FILL. PAY. GO.</text>
+  <text x="160" y="262" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="20" fill="#fff">Herd Milk</text>
+</svg><div><h3>Roadside sign</h3><p>An A-board for the lane: one line, the logo, the three steps.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Name ideas</h2>
+  <p class="sub">Herd Milk stays as the working name. Five alternatives, each with the reason it might suit.</p>
+  <div class="names"><div class="name work"><span class="k">Working name</span><h3>Herd Milk</h3><p>The working name. Short, says what it is and ties straight back to the Antrobus Herd.</p></div><div class="name"><h3>Morris Farm Milk</h3><p>Names the real farm, so the provenance is in the name itself.</p></div><div class="name"><h3>Black and White</h3><p>The colours of a Holstein, and a nod to keeping it simple: milk, no fuss.</p></div><div class="name"><h3>The Pinta Hut</h3><p>Old British slang for a pint of milk, with the hut you fill it at.</p></div><div class="name"><h3>Lane Milk</h3><p>From the herd that walks down the lane past the farm; easy to say and remember.</p></div><div class="name"><h3>Antrobus Pour</h3><p>Keeps the village name the herd already carries, with the act of filling up.</p></div></div>
+</div></section>
+
+<footer><div class="wrap"><p>Design idea by Pete Owen Design. Herd Milk is a working name and the whole direction is based on the idea that the Antrobus Herd might sell its own milk and milkshakes from a vending machine; none of that is confirmed. Prices, flavours, wording, the hut and its location are examples. Holstein facts, the 2005 prefix and the farm address come from antrobusherd.com.</p></div></footer>
+</body>
+</html>

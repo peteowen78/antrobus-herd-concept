@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Antrobus Herd: B, Herd Book (direction) (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1F3B2D;--deep:#142A1F;--bone:#ECEEE4;--paper:#F6F7F1;--amber:#D99A1E;--ink:#18231C;--mute:#4E5B52;--rule:#B9C1B3}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 "Public Sans",system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+.wrap.wrap{padding-left:24px;padding-right:24px}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Libre Caslon Text",Georgia,serif}
+h1,h2,h3{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;line-height:1.02;margin:0;letter-spacing:-.005em}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:13px 22px;font:700 1rem/1 "Public Sans",sans-serif;text-decoration:none;border-radius:2px;white-space:nowrap}
+.btn.a{background:var(--amber);color:var(--deep)}
+.btn.f{background:var(--forest);color:var(--paper)}
+.btn.l{box-shadow:inset 0 0 0 1.5px currentColor}
+
+/* masthead like the head of a herd book page */
+header{border-bottom:3px double var(--forest)}
+.hd{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px}
+.mark{text-decoration:none;display:flex;align-items:baseline;gap:12px}
+.mark b{font:400 2rem/1 "Libre Caslon Display",serif;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)}
+.mark i{font:italic 400 1rem "Libre Caslon Text",serif;color:var(--mute)}
+nav{display:flex;gap:26px;font-weight:600;font-size:.98rem}
+nav a{text-decoration:none}
+nav a:hover{color:var(--forest);text-decoration:underline;text-underline-offset:5px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center;padding:56px 0 64px}
+.hero .prefix{font:italic 400 1.1rem "Libre Caslon Text",serif;color:var(--mute);margin:0 0 14px}
+.hero h1{font-size:clamp(3.2rem,7vw,6rem);color:var(--forest)}
+.hero p.lede{font-size:1.18rem;max-width:36ch;margin:22px 0 28px;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.plate{margin:0;background:var(--bone);padding:14px 14px 10px;border:1px solid var(--rule)}
+.plate img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.plate figcaption{font:italic 400 .95rem "Libre Caslon Text",serif;color:var(--mute);padding:10px 2px 2px;display:flex;justify-content:space-between;gap:12px}
+
+/* entries */
+.entries{padding:24px 0 80px}
+.sect{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--forest);padding-bottom:12px;margin-bottom:8px}
+.sect h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--forest)}
+.entry{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.1fr);gap:32px;padding:34px 0;border-bottom:1px solid var(--rule);align-items:start}
+.entry .no{font:400 3.4rem/1 "Libre Caslon Display",serif;color:var(--amber)}
+.entry h3{font-size:2.2rem;margin-bottom:12px}
+.entry dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 14px;font-size:.98rem}
+.entry dt{font-weight:700}.entry dd{margin:0;color:var(--mute)}
+.entry img{width:100%;aspect-ratio:3/2;object-fit:cover;border:1px solid var(--rule)}
+
+/* pedigree: the breeding goal drawn as a pedigree */
+.ped{background:var(--forest);color:var(--paper);padding:84px 0}
+.ped h2{font-size:clamp(2.2rem,4.4vw,3.6rem);max-width:18ch}
+.ped .intro{max-width:56ch;color:#C9D4C9;margin:18px 0 44px}
+.tree{display:grid;grid-template-columns:1fr 1fr 1.2fr;align-items:center;gap:0}
+.col{display:grid;gap:16px}
+.box{border:1px solid rgba(236,238,228,.45);padding:14px 16px;position:relative;background:var(--deep)}
+.box small{display:block;font:600 .74rem/1 "Public Sans";letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.box b{font:400 1.3rem/1.15 "Libre Caslon Text",serif}
+.col.l .box::after,.col.m .box::after{content:"";position:absolute;left:100%;top:50%;width:32px;border-top:1px solid rgba(236,238,228,.45)}
+.col.l{padding-right:32px}.col.m{padding-right:32px;padding-left:0}
+.col.m{position:relative}
+.col.r .box{border-color:var(--amber);padding:26px 24px}
+.col.r .box b{font:400 clamp(1.6rem,2.6vw,2.3rem)/1.1 "Libre Caslon Display",serif}
+.ped blockquote{margin:44px 0 0;max-width:60ch;font:italic 400 1.2rem/1.55 "Libre Caslon Text",serif;color:#DDE4DA}
+
+/* also at Morris Farm: a printed notice */
+.notice{padding:84px 0}
+.notice .in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.card{border:3px double var(--forest);padding:40px;background:var(--bone);text-align:center}
+.card .k{font:600 .8rem/1 "Public Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.card h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--forest);margin:14px 0}
+.card p{margin:0 auto 24px;max-width:40ch}
+.show img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--rule)}
+.show p{font:italic 400 .98rem "Libre Caslon Text",serif;color:var(--mute);margin:10px 0 0}
+
+/* letterhead contact */
+.letter{border-top:3px double var(--forest);padding:64px 0 72px}
+.letter .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.letter q{display:block;font:400 clamp(1.6rem,2.8vw,2.3rem)/1.2 "Libre Caslon Display",serif;color:var(--forest);quotes:"\201C" "\201D"}
+.letter .who{margin-top:14px;color:var(--mute)}
+.letter address{font-style:normal;font:400 1.25rem/1.55 "Libre Caslon Text",serif;margin-bottom:12px}
+.letter p{margin:0 0 22px;color:var(--mute)}
+.letter .cta{gap:10px}
+footer{background:var(--deep);color:#C9D4C9;padding:28px 0 40px;font-size:.92rem}
+footer .in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{margin:0;max-width:72ch}
+
+@media (prefers-reduced-motion:no-preference){
+  .js .fade{opacity:0;transition:opacity 1s ease}
+  .js .fade.in-view{opacity:1}
+}
+@media (max-width:900px){
+  nav{display:none}
+  .mark b{font-size:1.5rem}.mark i{display:none}
+  .hd .btn{min-height:44px;padding:11px 16px}
+  .hero{grid-template-columns:1fr;gap:28px;padding:28px 0 48px}
+  .hero .plate{order:-1}
+  .hero p.lede{margin:14px 0 20px;font-size:1.08rem}
+  .entry{grid-template-columns:1fr;gap:14px;padding:28px 0}
+  .entry .no{font-size:2.4rem}
+  .tree{grid-template-columns:1fr;gap:16px}
+  .col.l,.col.m{padding:0}
+  .col.l .box::after,.col.m .box::after{display:none}
+  .notice .in,.letter .in{grid-template-columns:minmax(0,1fr)}
+  .ped,.notice{padding:56px 0}
+  .card{padding:26px 20px}
+}
+@media (max-width:480px){.wrap.wrap{padding-left:18px;padding-right:18px}}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Antrobus Herd website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<header>
+  <div class="hd">
+    <a class="mark" href="#top"><b>Antrobus</b><i>Herd, prefix since 2005</i></a>
+    <nav aria-label="Main"><a href="#herd">The herd</a><a href="#breeding">Breeding</a><a href="#contracting">Contracting</a><a href="#contact">Contact</a></nav>
+    <a class="btn f" href="tel:+441606891376">01606 891376</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <p class="prefix">Pedigree British Blue and Holstein Friesian cattle</p>
+      <h1>Bred to last.</h1>
+      <p class="lede">A small herd at Morris Farm, Antrobus, bred since 2005 for practical, hard working cattle.</p>
+      <div class="cta"><a class="btn a" href="tel:+441606891376">Call Paul Gerrard</a><a class="btn l" href="#herd">See the herd</a></div>
+    </div>
+    <figure class="plate fade">
+      <img src="https://static.wixstatic.com/media/85a0f4_f4273d1769c942ddaba05eacb4505511.jpg/v1/fill/w_1400,h_1050,al_c,q_85/85a0f4_f4273d1769c942ddaba05eacb4505511.jpg" alt="A blue roan British Blue cow lying in the grass with her calf" width="1400" height="1050">
+      <figcaption><span>British Blue cow and calf, Morris Farm</span><span>Antrobus</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap entries" id="herd">
+    <div class="sect"><h2>The herd</h2></div>
+    <article class="entry fade">
+      <div class="no">I</div>
+      <div>
+        <h3>British Blues</h3>
+        <dl><dt>Kept for</dt><dd>Beef</dd><dt>Colour</dt><dd>Blue roan, white and black</dd><dt>Prefix</dt><dd>Antrobus</dd></dl>
+        <p>Bred at home in Antrobus. Ask Paul about the cows, the calves and what is coming on.</p>
+      </div>
+      <img src="https://static.wixstatic.com/media/85a0f4_ac7d516b0b624ed795f88edfd6ffd1ad.jpg/v1/fill/w_1200,h_800,al_c,q_85/85a0f4_ac7d516b0b624ed795f88edfd6ffd1ad.jpg" alt="A British Blue cow and her calf standing in a field" loading="lazy">
+    </article>
+    <article class="entry fade">
+      <div class="no">II</div>
+      <div>
+        <h3>Holsteins and Holstein Friesians</h3>
+        <dl><dt>Kept for</dt><dd>Milk</dd><dt>Colour</dt><dd>Black and white, and red and white</dd><dt>Prefix</dt><dd>Antrobus</dd></dl>
+        <p>Practical, hard working cows that will perform well in a commercial herd.</p>
+      </div>
+      <img src="https://static.wixstatic.com/media/85a0f4_f5d9260b06574e05bacfb7a65bccd77c.jpg/v1/fill/w_1200,h_800,al_c,q_85/85a0f4_f5d9260b06574e05bacfb7a65bccd77c.jpg" alt="A Holstein heifer held on a halter by a man in green overalls" loading="lazy">
+    </article>
+  </section>
+
+  <section class="ped" id="breeding">
+    <div class="wrap">
+      <h2>What every Antrobus cow is bred from</h2>
+      <p class="intro">Read it like a pedigree. Three qualities on the left, one goal on the right.</p>
+      <div class="tree fade" role="img" aria-label="Practical, hard working and commercial cattle lead to a cow that lasts at least five lactations">
+        <div class="col l"><div class="box"><small>Sire line</small><b>Practical</b></div><div class="box"><small>Dam line</small><b>Hard working</b></div></div>
+        <div class="col m"><div class="box"><small>Bred for</small><b>A commercial environment</b></div></div>
+        <div class="col r"><div class="box"><small>The goal</small><b>A cow that will last at least 5 lactations</b></div></div>
+      </div>
+      <blockquote>"The Antrobus prefix was started in 2005, after leaving High School. The focus has always been to breed practical hard working cattle that will perform well in a commercial environment."</blockquote>
+    </div>
+  </section>
+
+  <section class="wrap notice" id="contracting">
+    <div class="in">
+      <div class="card fade">
+        <div class="k">Also at Morris Farm</div>
+        <h2>Tractor driving and hedgecutting</h2>
+        <p>"I am available for tractor driving and hedgecutting, at reasonable prices."</p>
+        <a class="btn f" href="tel:+441606891376">Ask for a price</a>
+      </div>
+      <div class="show fade">
+        <img src="https://static.wixstatic.com/media/85a0f4_8a39e07732464d7b9c25fb50d11ea4b3.jpg/v1/fill/w_1200,h_900,al_c,q_85/85a0f4_8a39e07732464d7b9c25fb50d11ea4b3.jpg" alt="The Holstein herd walking along a hedged lane past a red brick house" loading="lazy">
+        <p>The herd on the lane at Antrobus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="letter" id="contact">
+    <div class="wrap in">
+      <div>
+        <q>A very warm welcome was received when we visited. Although a very small herd it is well worth a visit.</q>
+        <div class="who">John T.</div>
+      </div>
+      <div>
+        <address>Paul Gerrard<br>Morris Farm, Knutsford Road<br>Antrobus, Northwich<br>Cheshire CW9 6NH</address>
+        <p>In easy access of the M56 and M6.</p>
+        <div class="cta"><a class="btn f" href="tel:+441606891376">01606 891376</a><a class="btn l" href="https://www.google.com/maps/search/?api=1&amp;query=Morris+Farm+Antrobus+CW9+6NH">Directions</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap in">
+    <p>Antrobus Herd, Morris Farm, Knutsford Road, Antrobus, Northwich, Cheshire CW9 6NH. 01606 891376.</p>
+    <p>Design idea by Pete Owen Design. Quotes, address, phone number and the 2005 date are from antrobusherd.com, and the photographs are the herd's own from that site. Headlines, captions, the herd entries and the pedigree labels are proposed copy.</p>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.fade').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

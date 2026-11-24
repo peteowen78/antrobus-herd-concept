@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Antrobus Herd: A, Tagged (direction) (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{--tag:#F5C518;--ink:#1B1A17;--milk:#FBFAF5;--grass:#3E7A3A;--roan:#5F6B78;--halter:#2C86BF;--mute:#55534C}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--milk);color:var(--ink);font:400 1.0625rem/1.55 Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100}
+img{display:block;max-width:100%;height:auto}
+.wrap.wrap{padding-left:24px;padding-right:24px}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Archivo,sans-serif;font-weight:900;font-variation-settings:"wdth" 70;line-height:.92;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+
+/* the ear tag: the brand mark and the label system */
+.tag{position:relative;display:inline-grid;place-items:center;background:var(--tag);color:var(--ink);border-radius:14px 14px 22px 22px;padding:26px 16px 12px;min-width:84px;text-align:center;font:900 1rem/1 Archivo,sans-serif;font-variation-settings:"wdth" 80;text-transform:uppercase;letter-spacing:.02em;box-shadow:inset 0 -4px 0 rgba(0,0,0,.12)}
+.tag::before{content:"";position:absolute;top:8px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--milk);box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.tag small{display:block;font-weight:600;font-size:.62em;letter-spacing:.12em;margin-top:4px}
+.on-dark .tag::before,.tag.dk::before{background:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 22px;border-radius:999px;font:800 1.05rem/1 Archivo,sans-serif;text-decoration:none;white-space:nowrap;transition:transform .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn.y{background:var(--tag);color:var(--ink)}
+.btn.k{background:var(--ink);color:var(--milk)}
+.btn.o{box-shadow:inset 0 0 0 2px currentColor}
+.btn svg{width:20px;height:20px}
+
+/* header */
+header{padding:14px 0;border-bottom:2px solid var(--ink)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .tag{min-width:62px;padding:20px 8px 8px;font-size:.78rem;border-radius:10px 10px 16px 16px}
+.logo .tag::before{top:6px;width:9px;height:9px;margin-left:-4.5px}
+.logo b{font:900 1.55rem/.9 Archivo,sans-serif;font-variation-settings:"wdth" 70;text-transform:uppercase}
+.logo span{display:block;font-weight:600;font-size:.8rem;color:var(--mute)}
+nav{display:flex;gap:26px;font-weight:700}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:3px;text-decoration-color:var(--tag)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding:48px 0 64px}
+.hero h1{font-size:clamp(3rem,7.2vw,6.4rem)}
+.hero h1 em{font-style:normal;background:var(--tag);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{font-size:1.2rem;max-width:34ch;margin:22px 0 28px;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.pic{position:relative}
+.pic img{width:100%;aspect-ratio:1/1;max-height:600px;object-fit:cover;object-position:55% 35%;border-radius:28px}
+.pic .tag{position:absolute;left:-26px;bottom:34px;transform:rotate(-8deg);font-size:1.4rem;padding:34px 20px 16px;transform-origin:50% 0;animation:swing 3.2s ease-in-out infinite}
+.pic .tag::before{background:var(--milk)}
+@keyframes swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(-2deg)}}
+
+/* breeds */
+.breeds{padding:24px 0 72px}
+.breeds h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:28px}
+.bgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.breed{position:relative;border-radius:28px;overflow:hidden;color:var(--milk);min-height:520px;display:flex;flex-direction:column;justify-content:flex-end}
+.breed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.breed::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,18,0) 35%,rgba(20,20,18,.82) 100%)}
+.breed .txt{position:relative;z-index:1;padding:28px}
+.breed h3{font-size:clamp(2rem,3.6vw,3rem);margin:14px 0 8px}
+.breed p{margin:0;max-width:42ch}
+.breed.hol{background:var(--ink)}
+.breed.hol img{object-position:30% 50%}
+
+/* five lactations */
+.five{background:var(--ink);color:var(--milk);padding:80px 0;position:relative;overflow:hidden}
+.five::before,.five::after{content:"";position:absolute;background:var(--milk);opacity:.06;border-radius:58% 42% 61% 39%/45% 55% 45% 55%}
+.five::before{width:520px;height:360px;right:-120px;top:-120px}
+.five::after{width:380px;height:300px;left:-140px;bottom:-140px;transform:rotate(30deg)}
+.five .in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.five blockquote{margin:0;font:800 clamp(1.6rem,3vw,2.4rem)/1.15 Archivo,sans-serif;font-variation-settings:"wdth" 85}
+.five blockquote span{color:var(--tag)}
+.five cite{display:block;margin-top:18px;font:500 1rem/1.5 Archivo,sans-serif;color:#C9C6BC;font-style:normal}
+.tags5{display:flex;flex-wrap:wrap;gap:12px}
+.tags5 .tag{font-size:1.6rem;min-width:76px;padding:30px 12px 12px}
+.tags5 .tag::before{background:var(--ink)}
+.tags5 p{flex-basis:100%;margin:10px 0 0;color:#C9C6BC;max-width:44ch}
+
+/* contracting */
+.contract{padding:80px 0;background:var(--grass);color:var(--milk)}
+.contract .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.contract h2{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+.contract p{font-size:1.2rem;max-width:36ch;margin:18px 0 26px}
+.contract img{border-radius:28px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.contract .tag::before{background:var(--grass)}
+
+/* visit */
+.visit{padding:80px 0}
+.visit .in{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:stretch}
+.quote{margin:0;background:var(--tag);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.quote p{font:800 clamp(1.6rem,3vw,2.3rem)/1.15 Archivo,sans-serif;font-variation-settings:"wdth" 85;margin:0}
+.quote span{font-weight:600}
+.find{border:2px solid var(--ink);border-radius:28px;padding:32px}
+.find h2{font-size:2.4rem;margin-bottom:14px}
+.find address{font-style:normal;font-size:1.15rem;line-height:1.5;margin-bottom:12px}
+.find p{color:var(--mute);margin:0 0 22px}
+.find .btn{margin:0 8px 8px 0}
+
+footer{border-top:2px solid var(--ink);padding:28px 0 40px;font-size:.92rem;color:var(--mute)}
+footer .in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.note{max-width:70ch}
+
+.rise{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .js .rise{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .js .rise.in-view{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.pic .tag{animation:none}}
+
+@media (max-width:860px){
+  nav{display:none}
+  .logo span{display:none}
+  .hd .btn{padding:12px 16px;min-height:46px}
+  .hero{grid-template-columns:1fr;gap:28px;padding:24px 0 48px}
+  .hero p{margin:14px 0 20px;font-size:1.08rem}
+  .pic{order:-1}
+  .pic img{aspect-ratio:4/3}
+  .pic .tag{left:auto;right:14px;bottom:-22px;font-size:1.05rem;padding:28px 14px 12px}
+  .bgrid,.five .in,.contract .in,.visit .in{grid-template-columns:minmax(0,1fr)}
+  .breed{min-height:420px}
+  .five,.contract,.visit{padding:56px 0}
+  .quote,.find{padding:26px}
+}
+@media (max-width:420px){.hd .btn .num{display:none}.hero h1{font-size:2.7rem}}
+@media (max-width:480px){.wrap.wrap{padding-left:18px;padding-right:18px}}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Antrobus Herd website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="Antrobus Herd, home"><span class="tag">Antrobus<small>2005</small></span><div><b>Antrobus Herd</b><span>Morris Farm, Cheshire</span></div></a>
+    <nav aria-label="Main"><a href="#herd">The herd</a><a href="#goal">Breeding</a><a href="#contracting">Contracting</a><a href="#visit">Find us</a></nav>
+    <a class="btn y" href="tel:+441606891376"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M222 158.4l-46.9-21a16 16 0 0 0-15.2 1.4l-25.1 16.7a76.5 76.5 0 0 1-35.2-35l16.7-25.1a16 16 0 0 0 1.4-15.2L97.6 33.4A16 16 0 0 0 81 24 56.3 56.3 0 0 0 32 80c0 79.4 64.6 144 144 144a56.3 56.3 0 0 0 56-49 16 16 0 0 0-10-16.6z"/></svg>Call <span class="num">01606 891376</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="rise">
+      <h1>Two breeds. One small herd. <em>Plenty of hedges.</em></h1>
+      <p>Pedigree British Blues and Holstein Friesians, bred at Morris Farm, Antrobus, since 2005. Tractor driving and hedgecutting too.</p>
+      <div class="cta"><a class="btn k" href="tel:+441606891376">Call Paul</a><a class="btn o" href="#herd">Meet the herd</a></div>
+    </div>
+    <div class="pic rise">
+      <img src="https://static.wixstatic.com/media/85a0f4_66e6e45bb4114a95a6222b719bc98ead.jpg/v1/fill/w_1200,h_1290,al_c,q_85/85a0f4_66e6e45bb4114a95a6222b719bc98ead.jpg" alt="A black and white Holstein calf with a yellow ear tag, in a blue rope halter" width="1200" height="1290">
+      <span class="tag" aria-hidden="true">Antrobus<small>Prefix since 2005</small></span>
+    </div>
+  </section>
+
+  <section class="wrap breeds" id="herd">
+    <h2 class="rise">Meet the herd</h2>
+    <div class="bgrid">
+      <article class="breed rise">
+        <img src="https://static.wixstatic.com/media/85a0f4_f4273d1769c942ddaba05eacb4505511.jpg/v1/fill/w_1400,h_1000,al_c,q_85/85a0f4_f4273d1769c942ddaba05eacb4505511.jpg" alt="A blue roan British Blue cow lying in the grass with her calf" loading="lazy">
+        <div class="txt"><span class="tag dk">Beef</span><h3>British Blues</h3><p>Big, blue roan and white, and built for beef. Ring Paul to ask what is coming on.</p></div>
+      </article>
+      <article class="breed hol rise">
+        <img src="https://static.wixstatic.com/media/85a0f4_333573e5daaa47b2a647ea9d800c112d.jpg/v1/fill/w_1000,h_1100,al_c,q_85/85a0f4_333573e5daaa47b2a647ea9d800c112d.jpg" alt="A red and white Holstein standing beside a black and white Holstein by a shed" loading="lazy">
+        <div class="txt"><span class="tag dk">Dairy</span><h3>Holsteins and Holstein Friesians</h3><p>Black and white, and the odd red and white. Practical, hard working cows.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="five" id="goal">
+    <div class="wrap in">
+      <div class="rise">
+        <blockquote>"Our overall breeding goal is to produce the type of cow that will last <span>at least 5 lactations.</span>"</blockquote>
+        <cite>The Antrobus prefix was started in 2005. The focus has always been to breed practical hard working cattle that will perform well in a commercial environment.</cite>
+      </div>
+      <div class="tags5 rise" aria-label="Five lactations">
+        <span class="tag">1</span><span class="tag">2</span><span class="tag">3</span><span class="tag">4</span><span class="tag">5</span>
+        <p>Five calves, and five seasons in the milking herd, at the very least. A cow that keeps going is the whole idea.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contract" id="contracting">
+    <div class="wrap in">
+      <div class="rise">
+        <span class="tag">Contracting</span>
+        <h2 style="margin-top:18px">Hedges cut. Tractors driven.</h2>
+        <p>"I am available for tractor driving and hedgecutting, at reasonable prices." Around Antrobus, Northwich and the lanes off the M56 and M6.</p>
+        <a class="btn y" href="tel:+441606891376">Call about a job</a>
+      </div>
+      <img class="rise" src="https://static.wixstatic.com/media/85a0f4_8a39e07732464d7b9c25fb50d11ea4b3.jpg/v1/fill/w_1200,h_900,al_c,q_85/85a0f4_8a39e07732464d7b9c25fb50d11ea4b3.jpg" alt="The Holstein herd walking along a hedged lane past a red brick house" loading="lazy">
+    </div>
+  </section>
+
+  <section class="wrap visit" id="visit">
+    <div class="in">
+      <figure class="quote rise">
+        <p>"A very warm welcome was received when we visited. Although a very small herd it is well worth a visit."</p>
+        <span>John T., a visitor to the farm</span>
+      </figure>
+      <div class="find rise">
+        <h2>Find us</h2>
+        <address>Paul Gerrard<br>Morris Farm, Knutsford Road<br>Antrobus, Northwich<br>Cheshire CW9 6NH</address>
+        <p>In easy access of the M56 and M6. Please ring before you come.</p>
+        <a class="btn k" href="tel:+441606891376">01606 891376</a><a class="btn o" href="https://www.google.com/maps/search/?api=1&amp;query=Morris+Farm+Antrobus+CW9+6NH">Open the map</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap in">
+    <p><strong>Antrobus Herd</strong>, Morris Farm, Knutsford Road, Antrobus, Northwich, Cheshire CW9 6NH. 01606 891376.</p>
+    <p class="note">Design idea by Pete Owen Design. The quotes, address, phone number and the prefix date are from antrobusherd.com; the photographs are the herd's own, from that site. Headlines, breed lines, the area for contracting, "Please ring before you come" and the line under the five tags are proposed copy.</p>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.rise').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
